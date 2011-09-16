@@ -1,0 +1,50 @@
+<% if @current_user %>
+<div class="messages">
+  <div class="post-update">
+    <h1>Post update</h1>
+    <form action="/updates" method="post">
+      <textarea name="update"></textarea>
+      <input class="button" type="submit" value="Post update" />
+    </form>
+  </div><!-- .post-update -->
+  <div class="feed">
+    <h1>Feed</h1>
+    <ul>
+    <% @feed.each do |f| %>
+      <li><%= f %></li>
+    <% end %>
+    </ul>
+  </div><!-- .feed -->
+  <div class="feed">
+    <h1>Updates</h1>
+    <ul>
+      <% @current_user.updates.each do |u| %>
+        <li><%= u.update %></li>
+      <% end %>
+    </ul>
+  </div><!-- .feed -->
+</div><!-- .messages -->
+<div class="friends">
+  <h1>Online friends</h1>
+  <ul>
+    <% @online_friends.each do |f| %>
+      <li><a href="/users/<%= f.name %>"><%= f.name %></a></li>
+    <% end %>
+  </ul>
+  <h1>Friends</h1>
+  <ul>
+    <% @friends.each do |f| %>
+      <li><a href="/users/<%= f.name %>"><%= f.name %></a></li>
+    <% end %>
+  </ul>
+</div><!-- .friends -->
+<% else %>
+  <div class="signup">
+    <h1>You new here? Join us!</h1>
+    <form action="/signup" method="post">
+      <label>Username</label>
+      <input class="new-username" type="text" name="name"/>
+      <input class="button signup" type="submit" value="Signup">
+    </form>
+  </div><!-- .signup -->
+<% end %>

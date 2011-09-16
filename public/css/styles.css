@@ -1,0 +1,522 @@
+/*!
+ * Kings Of Code
+ * Created by: Mint Digital Limited, 2011.
+ */
+
+/*** Colors ***
+ * Red:         #DF332A   Links
+ * Gray:        #CCC      Borders
+ * DarkRed:     #C9271E   Rollovers
+ * COLOR:       #CODE
+ */
+
+
+
+/*** Global ***/
+
+html, body {
+  background: #EEE;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 87.5%;
+}
+
+/*** Global > Typography ***/
+
+body, input, textarea, button {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+div, p {
+  text-align: left;
+}
+p {
+  margin: 0 0 1em;
+  line-height: 1.25;
+}
+p em {
+  font-style: italic;
+}
+strong {
+  font-weight: bold;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+
+/*** Global > Layouts ***/
+
+div.wrapper {
+  display: block;
+  width: 960px;
+  margin: 0px auto;
+}
+
+
+/*** Global > Headers ***/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  line-height: 1;
+  text-align: left;
+  text-shadow: 0 1px 0 #FFF;
+}
+h1 {
+  font-size: 2em;
+}
+body.iframe h1 {
+  font-size: 17px;
+}
+h2 {
+  font-size: 1.75em;
+}
+h3 {
+  font-size: 1.5em;
+}
+h4 {
+  font-size: 1.25em;
+}
+h5 {
+  font-size: 1.125em;
+}
+h6 {
+  font-size: 1em;
+}
+
+
+
+/*** Global > Links/Controls ***/
+
+a, button {
+  cursor: pointer;
+}
+button::-moz-focus-inner {
+  border: none; /* For FF 3.6 */
+}
+a, form.text div.submit button {
+  color: #DF332A;
+  text-decoration: none;
+}
+a:hover, a:focus {
+  color: #C9271E;
+}
+a:active {}
+a:visited {}
+input[disabled],
+button[disabled] {
+  cursor: pointer;
+  opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+/*** Global > Links/Controls > Buttons ***/
+
+a.button,
+span.button,
+form div.submit button,
+form input.button {
+  padding: 3px 15px 5px;
+  margin: 0;
+    background: #bbb;
+    background: -webkit-gradient(linear, left top, left bottom,
+                                        from(#EEE), to(#BBB));
+    background:    -moz-linear-gradient(top, #EEE,     #BBB);
+    background: -webkit-linear-gradient(top, #EEE,     #BBB);
+  background:           linear-gradient(top, #EEE,     #BBB);
+  color: #333;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+    -moz-border-radius:     20px;
+    -webkit-border-radius:  20px;
+  border-radius:            20px;
+  border: 1px solid #666;
+    -moz-box-shadow:    0 1px 2px rgba(0,0,0,0.4);
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+  box-shadow:           0 1px 2px rgba(0,0,0,0.4);
+  overflow: hidden;
+  text-decoration: none;
+  text-shadow: 0 1px 1px #FDFDFD;
+  white-space: nowrap;
+}
+a.button:hover,
+a.button:focus,
+span.button:hover,
+form div.submit button:hover,
+form div.submit button:focus,
+form input.button:hover,
+form input.button:focus {
+    background: -webkit-gradient(linear, left top, left bottom,
+                                        from(#CCC), to(#999));
+    background:    -moz-linear-gradient(top, #CCC,     #999);
+    background: -webkit-linear-gradient(top, #CCC,     #999);
+  background:           linear-gradient(top, #CCC,     #999);
+  border: 1px solid #666;
+  color: #222;
+}
+a.button:active,
+span.button:active,
+form div.submit button:active,
+form input.button:active {
+  border: 1px solid #666;
+    -moz-box-shadow:    0 0 0 rgba(0,0,0,0), inset 0 1px 4px rgba(0,0,0,0.4);
+    -webkit-box-shadow: 0 0 0 rgba(0,0,0,0), inset 0 1px 4px rgba(0,0,0,0.4);
+  box-shadow:           0 0 0 rgba(0,0,0,0), inset 0 1px 4px rgba(0,0,0,0.4);
+}
+
+
+
+/*** Global > Forms ***/
+/*  To avoid cross-form leaks, all forms *must* have class names. The basic
+    CSS below should be for decoration -- not layout. It should work in every
+    form, and be easy to override. */
+
+form {}
+form input,
+form textarea {
+  margin: 0;
+  background: #FFF;
+  border: 1px solid #666;
+}
+form input {
+  padding: 4px;
+}
+form textarea {
+  padding: 5px;
+}
+form input:focus,
+form textarea:focus {
+  border: 1px solid #DF332A;
+  outline: none;
+}
+form fieldset ol li div.field_with_errors {
+  display: inline;
+}
+
+
+
+/*** Global > Forms > General ***/
+
+form.general {
+  width: 675px;
+}
+form.general fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+form.general fieldset ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+form.general fieldset ol li {
+  clear: both;
+  padding: 5px 0;
+}
+form.general fieldset ol li.checkbox,
+form.general fieldset ol li.radio {
+  padding: 0.5em 0;
+}
+form.general fieldset ol li.multiple {}
+form.general fieldset ol li.multiple div.content {}
+form.general fieldset ol li.error {
+  background: #fbe3e4;
+  border: 0;
+  color: #d12f19;
+  padding: 10px 5px;
+}
+form.general fieldset ol li label {
+  display: block;
+  margin: 0 0 0.5em;
+  color: #808080;
+  font-weight: normal;
+}
+form.general fieldset ol li label em {
+  color: #999;
+  font-size: 0.875em;
+  font-style: normal;
+}
+form.general fieldset ol li input,
+form.general fieldset ol li textarea {
+  width: 660px;
+  padding: 0.5em 0;
+  border: 1px solid #808080;
+  font-size: 1.125em;
+}
+form.general fieldset ol li input:focus,
+form.general fieldset ol li textarea:focus {
+  border: 1px solid #DF332A;
+  outline: auto 0px -webkit-focus-ring-color;
+}
+form.general fieldset ol li textarea {
+  height: 7em;
+}
+form.general fieldset ol li.checkbox label,
+form.general fieldset ol li.radio label {
+  float: none;
+  display: inline;
+  width: auto;
+  margin: 0 0 0 0.5em;
+}
+form.general fieldset ol li.checkbox input,
+form.general fieldset ol li.radio input {
+  width: auto;
+  background: transparent;
+}
+form.general fieldset ol li span.error-message {
+  display: block;
+}
+form.general fieldset ol li.checkbox span.error-message,
+form.general fieldset ol li.radio span.error-message {
+  margin-left: 0;
+}
+form.general div.submit {
+  padding: 10px 0;
+}
+form.general div.submit span.alt {
+  padding: 0 0 0 0.5em;
+}
+
+
+
+/*** Global > Site header ***/
+
+header {
+  display: block;
+  height: 50px;
+  padding: 20px 0;
+}
+header h1 {
+  display: block;
+  float: left;
+  width: 160px;
+  margin: 0 20px 0 0;
+}
+header nav ul {
+  display: inline;
+  float: left;
+  list-style: none;
+}
+header nav.global {
+  float: left;
+  width: 460px;
+  margin: 0 20px 0 0;
+}
+header nav.global ul {
+  margin-top: 5px;
+}
+header nav.global ul li a {
+  padding: 5px 10px;
+  background: #DF332A;
+  color: #FFF;
+    -moz-border-radius:    5px;
+    -webkit-border-radius: 5px;
+  border-radius:           5px;
+  text-decoration: none;
+}
+header nav.global ul li a:hover,
+header nav.global ul li a:focus {
+  background: #C9271E;
+}
+header nav.user {
+  float: left;
+  width: 300px;
+}
+header nav.user form.signout {
+  float: right;
+  margin-left: 20px;
+}
+header nav.user ul li span.username {
+  font-weight: bold;
+}
+
+
+
+/*** Global > Site body ***/
+
+div.main {
+  float: none;
+  clear: both;
+  display: block;
+}
+
+
+/*** Global > Site footer ***/
+
+div#site-footer {
+  clear: both;
+  margin: 1em auto 0;
+  padding: 0 0 2em;
+  overflow: hidden;
+  color: #999;
+}
+
+
+
+/*************************************/
+/***           Objects             ***/
+/*************************************/
+
+/*  For complex blocks of HTML that can be used on nearly any page
+    regardless of context. */
+
+/*** Messages ***/
+
+div.messages {
+  float: left;
+  width: 638px;
+  margin-bottom: 30px;
+  background: #FFF;
+  border: 1px solid #CCC;
+}
+div.messages h1 {
+  font-size: 1.3em;
+  text-transform: uppercase;
+}
+div.messages div.post-update {
+  padding: 20px;
+}
+div.messages div.post-update h1 {
+  padding: 0 0 15px;
+}
+div.messages div.post-update form textarea {
+  width: 586px;
+  height: 50px;
+  font-size: 1em;
+}
+div.messages div.post-update form input.button {
+  float: right;
+  margin: 10px 0 20px;
+}
+div.messages div.user-info {
+  padding: 20px;
+  min-height: 27px;
+}
+div.messages div.user-info h1 {
+  float: left;
+  width: 320px;
+  margin-right: 20px;
+  font-size: 1.9em;
+  text-transform: none;
+}
+div.messages div.user-info form input.button,
+div.messages div.user-info h2 {
+  float: right;
+  max-width: 258px;
+}
+div.messages div.user-info h2 {
+  margin-top: 6px;
+  color: #BBB;
+  font-size: 0.9em;
+  text-align: right;
+  text-transform: uppercase;
+}
+div.messages div.feed {
+  float: none;
+  clear: both;
+}
+div.messages div.feed h1 {
+  padding: 10px 20px;
+  background: #DDD;
+  border-top:     1px solid #CCC;
+  border-bottom:  1px solid #CCC;
+}
+div.messages div.feed ul {
+  list-style: none;
+}
+div.messages div.feed ul li {
+  padding: 10px 20px;
+  border-bottom: 1px solid #CCC;
+}
+div.messages div.feed ul li:last-child {
+  border-bottom: none;
+}
+
+/*** Friends ***/
+
+div.friends {
+  float: left;
+  width: 279px;
+  padding: 20px;
+  margin-bottom: 30px;
+  background: #F6F6F6;
+  border-top:     1px solid #CCC;
+  border-right:   1px solid #CCC;
+  border-bottom:  1px solid #CCC;
+}
+div.friends h1 {
+  padding: 20px 0 10px;
+  font-size: 1.3em;
+  text-transform: uppercase;
+}
+div.friends h1:first-child {
+  padding: 0 0 10px;
+}
+div.friends ul {
+  list-style: none;
+}
+
+/*** Signup ***/
+
+div.signup {
+  width: 320px;
+  margin: 0 auto;
+}
+div.signup h1 {
+  margin: 0 0 20px;
+  text-align: center;
+}
+div.signup label {
+  display: block;
+  margin: 0 0 10px;
+  font-size: 1.2em;
+}
+div.signup input.new-username {
+  display: block;
+  width: 310px;
+  margin: 0 0 20px;
+  font-size: 1.35em;
+}
+input.button.signup {
+  width: 100%;
+  padding: 5px 20px 7px;
+}
+
+/*** Login ***/
+
+input.button.login {
+  padding: 2px 15px 4px;
+  font-size: 0.9em;
+}
+
+/*** Users ***/
+
+div.users h1 {
+  margin: 0 0 20px;
+}
+div.users ul {
+  list-style: none;
+}
+div.users ul li {
+  margin: 0 0 5px;
+  font-size: 1.1em;
+}
+
+
+
+/*************************************/
+/***            Pages              ***/
+/*************************************/
+
+/*** Main > Index ***/
+/*  The homepage. This should inherit from several other places, and should go
+    AFTER all other page/section-specific CSS. */
+
+body#main-index {}

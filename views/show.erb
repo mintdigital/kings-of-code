@@ -1,0 +1,25 @@
+<div class="messages">
+  <div class="user-info">
+    <h1><%= @user.name %>'s Profile</h1>
+
+    <% if @current_user %>
+      <% if !@current_user.friends_with?(@user) %>
+      <form action="/friends" method="post">
+        <input type="hidden" name="id" value="<%= @user.id %>" />
+        <input class="button" type="submit" value="Become Friend" />
+      </form>
+      <% else %>
+        <h2>You are friends with <%= @user.name %></h2>
+      <% end %>
+    <% end %>
+  </div><!-- .user-info -->
+
+  <div class="feed">
+    <h1>Updates</h1>
+      <ul>
+        <% @user.updates.each do |u| %>
+          <li><%= u.update %></li>
+        <% end %>
+      </ul>
+  </div><!-- .feed -->
+</div><!-- .messages -->

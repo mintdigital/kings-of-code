@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redis Feed</title>
+
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1><a href="/">Redis Feed</a></h1>
+      <nav class="global">
+        <ul>
+          <li><a href="/users">Users</a></li>
+        </ul>
+      </nav>
+    <% if @current_user %>
+      <nav class="user">
+        <ul>
+          <li>
+            Hello, <span class="username"><%= @current_user.name %></span>!
+          </li>
+          <li>You have <%= @current_user.profile_views %> profile views</li>
+        </ul>
+        <form class="signout" action="/signout" method="post">
+          <input class="button" type="submit" value="sign out" />
+        </form>
+      </nav>
+    </header>
+    <% else %>
+      <form action="/signin" method="post">
+        <label>Username
+          <input type="text" name="name"/>
+        </label>
+        <input class="button login" type="submit" value="Login">
+      </form>
+    </header>
+    <% end %>
+
+    <div class="main">
+      <%= yield %>
+    </div><!-- .main -->
+  </div><!-- .wrapper -->
+</body>
+</html>
